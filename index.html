@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patas Felizes - Adote um Amigo!</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif; /* Fontes fofinhas */
+            margin: 0;
+            padding: 0;
+            background-color: #FFF0F5; /* Lavanda Rosada - um fundo suave */
+            color: #5D4037; /* Marrom escuro para texto, boa legibilidade */
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #FFB6C1; /* Rosa Claro */
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #FFFFFF;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #FFF5EE; /* Floral Branco */
+        }
+
+        nav {
+            background-color: #FFDEAD; /* Laranja Pêssego Claro (Navajo White) */
+            padding: 15px 0;
+            text-align: center;
+            border-radius: 30px;
+            margin: 20px auto;
+            width: 80%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #D2691E; /* Chocolate */
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 10px 15px;
+            border-radius: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #FFA07A; /* Salmão Claro */
+            color: white;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #FFFFFF;
+            border-radius: 40px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background-color: #FFFFE0; /* Amarelo Canário Claro */
+            border-radius: 30px;
+            border: 2px dashed #FFD700; /* Dourado */
+        }
+
+        .section h2 {
+            color: #FF69B4; /* Rosa Choque */
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .dog-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 25px; /* Espaçamento entre os cards */
+        }
+
+        .dog-card {
+            background-color: #F0FFF0; /* Verde Menta Pálido (Honeydew) */
+            border: 1px solid #98FB98; /* Verde Pálido */
+            border-radius: 25px;
+            width: 300px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .dog-card:hover {
+            transform: translateY(-10px) scale(1.03);
+        }
+
+        .dog-card img {
+            width: 100%;
+            max-width: 250px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            border: 3px solid #ADD8E6; /* Azul Claro */
+        }
+
+        .dog-card h3 {
+            color: #4682B4; /* Azul Aço */
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+
+        .dog-card p {
+            font-size: 0.95em;
+            color: #2F4F4F; /* Cinza Ardósia Escuro */
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #FFA500; /* Laranja */
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .button:hover {
+            background-color: #FF8C00; /* Laranja Escuro */
+            transform: scale(1.05);
+        }
+
+        .cta-section {
+            background-color: #87CEFA; /* Azul Céu Claro */
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 30px;
+            margin-top: 30px;
+        }
+
+        .cta-section h2 {
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .cta-section p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #FFB6C1; /* Rosa Claro (mesmo do header) */
+            color: #FFFFFF;
+            text-align: center;
+            padding: 25px 20px;
+            margin-top: 40px;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+            font-size: 0.9em;
+        }
+
+        /* Ícones de patinhas (simples com texto) */
+        .paw-icon::before {
+            content: "🐾 "; /* Pode usar uma imagem SVG ou font icon para melhor visual */
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><span class="paw-icon"></span>Patas Felizes<span class="paw-icon"></span></h1>
+        <p>Encontrando lares amorosos para anjinhos de quatro patas!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#sobre">Quem Somos</a></li>
+            <li><a href="#adote">Adote um Amigo</a></li>
+            <li><a href="#como-ajudar">Como Ajudar</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="sobre" class="section">
+            <h2><span class="paw-icon"></span>Nossa Missão</h2>
+            <p>Na Patas Felizes, acreditamos que todo cãozinho merece um lar quentinho, cheio de amor, carinho e muitas brincadeiras! Nossa missão é resgatar, cuidar e encontrar famílias maravilhosas para cachorros em situação de vulnerabilidade. Trabalhamos com paixão para dar uma segunda chance a esses seres incríveis que só querem dar e receber afeto.</p>
+            <p>Somos um grupo de voluntários dedicados e apaixonados por animais. Cada adoção é uma festa para nós!</p>
+        </section>
+
+        <section id="adote" class="section">
+            <h2><span class="paw-icon"></span>Conheça Nossos Peludinhos!</h2>
+            <div class="dog-gallery">
+                <div class="dog-card">
+                    <img src="https://placedog.net/500/350/g?random=1" alt="Cachorro fofo para adoção - Bob">
+                    <h3>Bob</h3>
+                    <p>Bob é um viralata caramelo super brincalhão e cheio de energia. Adora correr e buscar bolinhas. Se dá bem com crianças e outros cães!</p>
+                    <a href="#" class="button">Quero Adotar o Bob!</a>
+                </div>
+
+                <div class="dog-card">
+                    <img src="https://placedog.net/500/350/g?random=2" alt="Cachorro fofo para adoção - Luna">
+                    <h3>Luna</h3>
+                    <p>Luna é uma mocinha charmosa e um pouco tímida no começo, mas logo se solta e mostra todo seu amor. Perfeita para quem busca uma companheira tranquila.</p>
+                    <a href="#" class="button">Quero Adotar a Luna!</a>
+                </div>
+
+                <div class="dog-card">
+                    <img src="https://placedog.net/500/350/g?random=3" alt="Cachorro fofo para adoção - Thor">
+                    <h3>Thor</h3>
+                    <p>Apesar do nome de trovão, Thor é um doce de cachorro! Um grandão gentil que adora um bom cochilo no sofá e um carinho na barriga.</p>
+                    <a href="#" class="button">Quero Adotar o Thor!</a>
+                </div>
+                 <div class="dog-card">
+                    <img src="https://placedog.net/500/350/g?random=4" alt="Cachorro fofo para adoção - Mel">
+                    <h3>Mel</h3>
+                    <p>Pequena no tamanho, gigante no amor! Mel é uma cadelinha super afetuosa e que adora estar perto de seus humanos. Ótima para apartamentos.</p>
+                    <a href="#" class="button">Quero Adotar a Mel!</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="como-ajudar" class="section cta-section">
+            <h2><span class="paw-icon"></span>Faça Parte Dessa Corrente do Bem!</h2>
+            <p>Existem muitas formas de ajudar nossos peludinhos a terem uma vida mais feliz. Sua contribuição faz toda a diferença!</p>
+            <ul>
+                <li><strong>Doe:</strong> Qualquer quantia ajuda a cobrir custos com ração, veterinário e cuidados.</li>
+                <li><strong>Seja um Voluntário:</strong> Dedique um pouco do seu tempo para brincar, passear e cuidar dos nossos cães.</li>
+                <li><strong>Lar Temporário:</strong> Ofereça um lar provisório para um cãozinho enquanto ele espera por sua família definitiva.</li>
+                <li><strong>Divulgue:</strong> Compartilhe nossos cães nas redes sociais e ajude-os a encontrar um lar!</li>
+            </ul>
+            <a href="#" class="button" style="background-color: #32CD32; color: white;">Quero Ajudar Agora!</a>
+        </section>
+
+        <section id="contato" class="section">
+            <h2><span class="paw-icon"></span>Fale Conosco!</h2>
+            <p>Tem alguma dúvida, quer adotar ou ajudar? Entre em contato conosco! Será um prazer conversar com você.</p>
+            <p style="text-align:center;">
+                <strong>Email:</strong> contato@patasfelizes.org<br>
+                <strong>Telefone:</strong> (XX) 99999-8888<br>
+                <strong>Nos siga nas redes sociais:</strong> @PatasFelizesONG
+            </p>
+            <div style="text-align:center; margin-top:20px;">
+                <a href="#" class="button" style="background-color: #1E90FF;">Enviar Mensagem</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024-2025 Patas Felizes ONG. Todos os direitos reservados.</p>
+        <p>Feito com <span style="color: #FF0000;">❤</span> e muitas lambidas!</p>
+    </footer>
+
+</body>
+</html>
