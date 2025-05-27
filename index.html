@@ -6,16 +6,16 @@
     <title>Patas Felizes - Adote um Amigo!</title>
     <style>
         body {
-            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif; /* Fontes fofinhas */
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #FFF0F5; /* Lavanda Rosada - um fundo suave */
-            color: #5D4037; /* Marrom escuro para texto, boa legibilidade */
+            background-color: #FFF0F5;
+            color: #5D4037;
             line-height: 1.6;
         }
 
         header {
-            background-color: #FFB6C1; /* Rosa Claro */
+            background-color: #FFB6C1;
             padding: 30px 20px;
             text-align: center;
             border-bottom-left-radius: 50px;
@@ -32,11 +32,11 @@
 
         header p {
             font-size: 1.2em;
-            color: #FFF5EE; /* Floral Branco */
+            color: #FFF5EE;
         }
 
         nav {
-            background-color: #FFDEAD; /* Laranja Pêssego Claro (Navajo White) */
+            background-color: #FFDEAD;
             padding: 15px 0;
             text-align: center;
             border-radius: 30px;
@@ -58,7 +58,7 @@
 
         nav ul li a {
             text-decoration: none;
-            color: #D2691E; /* Chocolate */
+            color: #D2691E;
             font-weight: bold;
             font-size: 1.1em;
             padding: 10px 15px;
@@ -67,7 +67,7 @@
         }
 
         nav ul li a:hover {
-            background-color: #FFA07A; /* Salmão Claro */
+            background-color: #FFA07A;
             color: white;
         }
 
@@ -84,13 +84,13 @@
         .section {
             margin-bottom: 40px;
             padding: 25px;
-            background-color: #FFFFE0; /* Amarelo Canário Claro */
+            background-color: #FFFFE0;
             border-radius: 30px;
-            border: 2px dashed #FFD700; /* Dourado */
+            border: 2px dashed #FFD700;
         }
 
         .section h2 {
-            color: #FF69B4; /* Rosa Choque */
+            color: #FF69B4;
             text-align: center;
             font-size: 2.5em;
             margin-bottom: 20px;
@@ -101,12 +101,12 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
-            gap: 25px; /* Espaçamento entre os cards */
+            gap: 25px;
         }
 
         .dog-card {
-            background-color: #F0FFF0; /* Verde Menta Pálido (Honeydew) */
-            border: 1px solid #98FB98; /* Verde Pálido */
+            background-color: #F0FFF0;
+            border: 1px solid #98FB98;
             border-radius: 25px;
             width: 300px;
             padding: 20px;
@@ -126,23 +126,23 @@
             object-fit: cover;
             border-radius: 20px;
             margin-bottom: 15px;
-            border: 3px solid #ADD8E6; /* Azul Claro */
+            border: 3px solid #ADD8E6;
         }
 
         .dog-card h3 {
-            color: #4682B4; /* Azul Aço */
+            color: #4682B4;
             margin-top: 0;
             font-size: 1.8em;
         }
 
         .dog-card p {
             font-size: 0.95em;
-            color: #2F4F4F; /* Cinza Ardósia Escuro */
+            color: #2F4F4F;
         }
 
         .button {
             display: inline-block;
-            background-color: #FFA500; /* Laranja */
+            background-color: #FFA500;
             color: white;
             padding: 12px 25px;
             text-decoration: none;
@@ -154,12 +154,12 @@
         }
 
         .button:hover {
-            background-color: #FF8C00; /* Laranja Escuro */
+            background-color: #FF8C00;
             transform: scale(1.05);
         }
 
         .cta-section {
-            background-color: #87CEFA; /* Azul Céu Claro */
+            background-color: #87CEFA;
             color: white;
             text-align: center;
             padding: 40px 20px;
@@ -178,7 +178,7 @@
         }
 
         footer {
-            background-color: #FFB6C1; /* Rosa Claro (mesmo do header) */
+            background-color: #FFB6C1;
             color: #FFFFFF;
             text-align: center;
             padding: 25px 20px;
@@ -188,10 +188,76 @@
             font-size: 0.9em;
         }
 
-        /* Ícones de patinhas (simples com texto) */
         .paw-icon::before {
-            content: "🐾 "; /* Pode usar uma imagem SVG ou font icon para melhor visual */
+            content: "🐾 ";
             font-size: 1.2em;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #FFFFFF;
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            position: relative;
+            text-align: left;
+        }
+
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            font-size: 1.5em;
+            color: #FF69B4;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close:hover {
+            color: #D2691E;
+        }
+
+        .modal-content h2 {
+            color: #FF69B4;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-content label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #5D4037;
+            font-weight: bold;
+        }
+
+        .modal-content input,
+        .modal-content textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #ADD8E6;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1em;
+        }
+
+        .modal-content button {
+            width: 100%;
+            text-align: center;
         }
     </style>
 </head>
@@ -241,7 +307,7 @@
                     <p>Apesar do nome de trovão, Thor é um doce de cachorro! Um grandão gentil que adora um bom cochilo no sofá e um carinho na barriga.</p>
                     <a href="#" class="button">Quero Adotar o Thor!</a>
                 </div>
-                 <div class="dog-card">
+                <div class="dog-card">
                     <img src="https://placedog.net/500/350/g?random=4" alt="Cachorro fofo para adoção - Mel">
                     <h3>Mel</h3>
                     <p>Pequena no tamanho, gigante no amor! Mel é uma cadelinha super afetuosa e que adora estar perto de seus humanos. Ótima para apartamentos.</p>
@@ -264,22 +330,96 @@
 
         <section id="contato" class="section">
             <h2><span class="paw-icon"></span>Fale Conosco!</h2>
-            <p>Tem alguma dúvida, quer adotar ou ajudar? Entre em contato conosco! Será um prazer conversar com você.</p>
-            <p style="text-align:center;">
+            <p style="text-align: center;">Tem alguma dúvida, quer adotar ou ajudar? Entre em contato conosco! Será um prazer conversar com você.</p>
+            <p style="text-align: center;">
                 <strong>Email:</strong> contato@patasfelizes.org<br>
                 <strong>Telefone:</strong> (XX) 99999-8888<br>
                 <strong>Nos siga nas redes sociais:</strong> @PatasFelizesONG
             </p>
-            <div style="text-align:center; margin-top:20px;">
+            <div style="text-align: center; margin-top: 20px;">
                 <a href="#" class="button" style="background-color: #1E90FF;">Enviar Mensagem</a>
             </div>
         </section>
     </div>
 
+    <!-- Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h2>Fale Conosco</h2>
+            <form id="contactForm" action="mailto:maria.mesquita@ufn.edu.br" method="post" enctype="text/plain">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <input type="hidden" id="dogName" name="dogName">
+                <button type="submit" class="button" style="background-color: #1E90FF;">Enviar</button>
+            </form>
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2024-2025 Patas Felizes ONG. Todos os direitos reservados.</p>
+        <p>© 2024-2025 Patas Felizes ONG. Todos os direitos reservados.</p>
         <p>Feito com <span style="color: #FF0000;">❤</span> e muitas lambidas!</p>
     </footer>
 
+    <script>
+        // Selecionar elementos
+        const modal = document.getElementById('contactModal');
+        const closeModal = document.querySelector('.close');
+        const contactForm = document.getElementById('contactForm');
+        const dogNameInput = document.getElementById('dogName');
+        const messageInput = document.getElementById('message');
+
+        // Função para abrir o modal
+        function openModal(dogName = '') {
+            modal.style.display = 'flex';
+            dogNameInput.value = dogName;
+            if (dogName) {
+                messageInput.value = `Olá, estou interessado em adotar o ${dogName}!`;
+            } else {
+                messageInput.value = '';
+            }
+        }
+
+        // Fechar o modal
+        closeModal.onclick = function() {
+            modal.style.display = 'none';
+        };
+
+        // Fechar o modal ao clicar fora do conteúdo
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+
+        // Adicionar evento ao botão "Enviar Mensagem"
+        document.querySelector('#contato .button').onclick = function(event) {
+            event.preventDefault();
+            openModal();
+        };
+
+        // Adicionar eventos aos botões "Quero Adotar"
+        document.querySelectorAll('.dog-card .button').forEach(button => {
+            button.onclick = function(event) {
+                event.preventDefault();
+                const dogName = this.parentElement.querySelector('h3').textContent;
+                openModal(dogName);
+            };
+        });
+
+        // Configurar o formulário para enviar e-mail
+        contactForm.onsubmit = function() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const dogName = dogNameInput.value;
+            let subject = dogName ? `Interesse em adotar: ${dogName}` : 'Contato Patas Felizes';
+            this.action = `mailto:maria.mesquita@ufn.edu.br?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nome: ${name}\nE-mail: ${email}\nMensagem: ${message}`)}`;
+        };
+    </script>
 </body>
 </html>
